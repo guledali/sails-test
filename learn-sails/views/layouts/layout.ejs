@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NEW_APP_NAME</title>
 
-    <% /* Viewport tag for sensible mobile support */ %>
+<head>
+  <title>NEW_APP_NAME</title>
+
+  <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <% /* Script tags should normally be included further down the page- but scripts
     that load fonts are a special exception to the rule.  (We include them up here
     above the «body» to prevent the page flickering when fonts load.)  */ %>
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/96cbd61ead.js"></script>
+      <!-- Font Awesome -->
+      <script src="https://use.fontawesome.com/96cbd61ead.js"></script>
 
-    <% /*
+      <% /*
         Stylesheets
         ========================
 
@@ -21,30 +22,109 @@
         (https://sailsjs.com/docs/concepts/assets/task-automation)
     */ %>
 
-    <% /* Auto-injected «link» tags: */ %>
-    <!--STYLES-->
-    <link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-  </head>
+        <% /* Auto-injected «link» tags: */ %>
+          <!--STYLES-->
+          <link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+          <link rel="stylesheet" href="/styles/importer.css">
+          <!--STYLES END-->
+</head>
 
-  <body>
+<body>
 
- 
-   <div class="text-center">
-      <button type="button" class="btn btn-success rounded-0 mt-3"><h1 class="display-3">Telefonbok</h1></button>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-success rounded-0 mt-3">
+      <h1 class="display-3">Telefonbok</h1>
+    </button>
   </div>
 
-<div class="container">
-  <form class="mt-5">
-    <div class="form-inline">
-      <input type="tel" class="w-50 form-control" placeholder="Enter number">
-      <button type="submit" class="btn btn-primary ml-3">Submit</button>
+  <div class="container">
+    <form class="mt-5">
+      <div class="form-inline">
+        <input type="tel" class="w-50 form-control" placeholder="Enter number">
+        <button type="submit" class="btn btn-primary ml-3">Submit</button>
+      </div>
+    </form>
   </div>
-  </form>
-</div>
 
-    <% /*
+  <!-- <div class="mt-5 w-75 mx-auto border border-secondary ">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Telefonnummer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <th scope="col">
+            <button type="button" class="btn btn-success">Edit</button>
+          </th>
+          <th scope="col">
+            <button type="button" class="btn btn-danger">Delete</button>
+          </th>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  <div class="mt-5 w-75 mx-auto border border-secondary ">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Telefonnummer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <th scope="col">
+            <a class="btn btn-primary text-white">Edit</a>
+            <form class="d-inline">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </th>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <th scope="col">
+            <a class="btn btn-primary text-white">Edit</a>
+            <form class="d-inline">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </th>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <th scope="col">
+            <a class="btn btn-primary text-white">Edit</a>
+            <form class="d-inline">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <% /*
       Client-side JavaScript
       ========================
 
@@ -54,42 +134,43 @@
     */ %>
 
     <% /* Load Stripe Checkout */ %>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
 
-    <% /* Delete the global `self` to help avoid client-side bugs.
+      <% /* Delete the global `self` to help avoid client-side bugs.
     (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
-    <script>delete window.self;</script>
+        <script>delete window.self;</script>
 
-    <% /* Auto-injected «script» tags: */ %>
-    <!--SCRIPTS-->
-    <script src="/dependencies/sails.io.js"></script>
-    <script src="/dependencies/lodash.js"></script>
-    <script src="/dependencies/jquery.min.js"></script>
-    <script src="/dependencies/bowser.js"></script>
-    <script src="/dependencies/vue.js"></script>
-    <script src="/dependencies/bootstrap-4/bootstrap-4.bundle.js"></script>
-    <script src="/dependencies/cloud.js"></script>
-    <script src="/dependencies/parasails.js"></script>
-    <script src="/js/cloud.setup.js"></script>
-    <script src="/js/components/ajax-button.component.js"></script>
-    <script src="/js/components/ajax-form.component.js"></script>
-    <script src="/js/components/modal.component.js"></script>
-    <script src="/js/utilities/open-stripe-checkout.js"></script>
-    <script src="/js/pages/498.page.js"></script>
-    <script src="/js/pages/account/account-overview.page.js"></script>
-    <script src="/js/pages/account/edit-password.page.js"></script>
-    <script src="/js/pages/account/edit-profile.page.js"></script>
-    <script src="/js/pages/contact.page.js"></script>
-    <script src="/js/pages/dashboard/welcome.page.js"></script>
-    <script src="/js/pages/entrance/confirmed-email.page.js"></script>
-    <script src="/js/pages/entrance/forgot-password.page.js"></script>
-    <script src="/js/pages/entrance/login.page.js"></script>
-    <script src="/js/pages/entrance/new-password.page.js"></script>
-    <script src="/js/pages/entrance/signup.page.js"></script>
-    <script src="/js/pages/faq.page.js"></script>
-    <script src="/js/pages/homepage.page.js"></script>
-    <script src="/js/pages/legal/privacy.page.js"></script>
-    <script src="/js/pages/legal/terms.page.js"></script>
-    <!--SCRIPTS END-->
-  </body>
+        <% /* Auto-injected «script» tags: */ %>
+          <!--SCRIPTS-->
+          <script src="/dependencies/sails.io.js"></script>
+          <script src="/dependencies/lodash.js"></script>
+          <script src="/dependencies/jquery.min.js"></script>
+          <script src="/dependencies/bowser.js"></script>
+          <script src="/dependencies/vue.js"></script>
+          <script src="/dependencies/bootstrap-4/bootstrap-4.bundle.js"></script>
+          <script src="/dependencies/cloud.js"></script>
+          <script src="/dependencies/parasails.js"></script>
+          <script src="/js/cloud.setup.js"></script>
+          <script src="/js/components/ajax-button.component.js"></script>
+          <script src="/js/components/ajax-form.component.js"></script>
+          <script src="/js/components/modal.component.js"></script>
+          <script src="/js/utilities/open-stripe-checkout.js"></script>
+          <script src="/js/pages/498.page.js"></script>
+          <script src="/js/pages/account/account-overview.page.js"></script>
+          <script src="/js/pages/account/edit-password.page.js"></script>
+          <script src="/js/pages/account/edit-profile.page.js"></script>
+          <script src="/js/pages/contact.page.js"></script>
+          <script src="/js/pages/dashboard/welcome.page.js"></script>
+          <script src="/js/pages/entrance/confirmed-email.page.js"></script>
+          <script src="/js/pages/entrance/forgot-password.page.js"></script>
+          <script src="/js/pages/entrance/login.page.js"></script>
+          <script src="/js/pages/entrance/new-password.page.js"></script>
+          <script src="/js/pages/entrance/signup.page.js"></script>
+          <script src="/js/pages/faq.page.js"></script>
+          <script src="/js/pages/homepage.page.js"></script>
+          <script src="/js/pages/legal/privacy.page.js"></script>
+          <script src="/js/pages/legal/terms.page.js"></script>
+          <!--SCRIPTS END-->
+</body>
+
 </html>
